@@ -1,0 +1,34 @@
+<?php get_header(); ?>
+<div class="d-flex justify-content-between">
+	<div class="row">
+		
+	
+	<div class="flex-2" style = "max-width:100vw; overflow-hidden col-md-9 col-sm-12">
+	<?php 
+      $query = new WP_Query( array( 'category_name' => 'news', 'posts_per_page' => 3 ) );
+
+	?>
+		<div class="main-article row mb-5 pl-3 pr-3">
+			<?php 
+				$query->the_post();
+				get_template_part('template-parts/post/post','main');
+			?>
+		</div>
+		
+		<div class="d-flex row">
+			<?php
+				if($query->have_posts()) {
+					while ($query->have_posts()) {
+						$query->the_post();
+						get_template_part('template-parts/post/post','news');
+					}
+				}
+			?>
+		</div>
+</div>
+	<div class="col-md-3 col-sm-12">
+		<?php get_sidebar(); ?>
+	</div>
+		</div>
+</div>
+<?php get_footer(); ?>
