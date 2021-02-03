@@ -1,0 +1,23 @@
+<?php get_header(); ?>
+<div class="row">
+	<div class="col-md-9">
+            <?php
+				if(have_posts()) {
+					while (have_posts()) {
+                        the_post();
+						echo '<div class="col-md-12 col-sm-12">';
+					    get_template_part('template-parts/post/post',get_the_category()[0]->slug);
+						echo '</div>';
+					}
+				}
+
+			?>
+	</div>
+	<div class="col-md-3">
+		<?php get_sidebar();?>
+	</div>
+</div>
+<?php
+	my_pagenavi();
+?>
+<?php get_footer(); ?>
