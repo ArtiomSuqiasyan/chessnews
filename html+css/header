@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><?php echo bloginfo('name');?></title>
+  <meta charset="utf-8">
+  <meta name="description" content="<?php echo bloginfo('description')?>">
+  <meta name="og:description" content="<?php echo bloginfo('description')?>">
+  <meta name="og:title" content="<?php echo bloginfo('name')?>">
+  <link rel="icon" href="<?php echo get_site_url().'/wp-content/uploads/2020/05/91982322_100636768278579_4653573618989531136_n.png' ?>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= get_template_directory_uri().'/style.css'?>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+  <?php wp_head();?>
+</head>
+<body>
+	<div class="all">
+		<div class="container" style="margin-top:30px">
+
+    <?php if(!is_page() && !is_single()):?>
+    
+  <?php endif;?>
